@@ -1,0 +1,59 @@
+header
+{
+    height: 5vh;
+    background-color: green;
+}
+
+main
+{
+    justify-content: space-between;
+    border: 4px solid black;
+}
+
+#myInput
+{
+    border: 3px solid green;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#myTitle
+{
+    border: 3px solid orange;
+    width: 50%;
+}
+
+#myLanguage
+{
+    border: 3px solid blue;
+}
+
+#myFilter
+{
+    border: 3px solid red;
+}
+
+#myList
+{
+    border: 3px solid purple;
+    width: 74%;
+}
+
+summary
+{
+    text-align: center;
+    margin: 2vh 1vw;
+    height: 5vh;
+}
+
+figure
+{
+    height: 75vh;
+    margin: 2vh 1vw;
+}
+
+button
+{
+    margin: .5vh 1vw;
+}
