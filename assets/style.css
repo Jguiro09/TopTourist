@@ -22,11 +22,17 @@ main
 {
     border: 3px solid orange;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #myLanguage
 {
     border: 3px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #myFilter
@@ -50,12 +56,15 @@ summary
 figure
 {
     height: 75vh;
-    margin: 2vh 1vw;
+    margin: 1.5vh 1vw;
 }
 
 button
 {
-    margin: .5vh 1vw 0vh 1vw;
+    align-self: center;
+    margin-bottom: 1vh;
+    width: 100%;
+    height: 100%;
 }
 
 table
@@ -74,4 +83,12 @@ thead
 footer
 {
     height: 2vh;
+}
+
+#submitButton
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vw;
 }
