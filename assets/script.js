@@ -12,7 +12,7 @@ fetch(requestUrlFood)
     
     })}
 searchFood ("pizza"); //need to stringify could do it in the search input function !! Look up
-    console.log(data.response.venues[0].name)})
+    console.log(data.response.venues[0].name)
 
     ///Events API- category id https://developer.foursquare.com/docs/build-with-foursquare/categories/
 
@@ -23,9 +23,6 @@ searchFood ("pizza"); //need to stringify could do it in the search input functi
     })
     .then(function (data) {
         //This drills down to specific location
-<<<<<<< HEAD
     //console.log(data.response.venues)**//
 }) 
-=======
-    console.log(data.response.venues[3].location)}) 
->>>>>>> ce062278c77a0e6b635f67ef16bbc0791dbbc65f
+    console.log(data.response.venues[3].location) 
