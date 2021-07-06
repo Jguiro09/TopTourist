@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "assets/reset.css" rel = "stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-    <link href = "assets/reset.css" rel = "stylesheet"/>
     <link href = "assets/style.css" rel = "stylesheet"/>
     <title>Document</title>
 </head>
@@ -22,16 +22,87 @@
     <main class = "pure-g">
         <!--SUB-HEADER -->
         <summary class="pure-u-1-5" id = "myInput"><input type = "text"></input></summary>
-        <summary class="pure-u-3-5" id = "myTitle">TEST TESTJACOB TEST STAGING Celia TEST Test Dave Jonathan test test</summary>
-        <summary class="pure-u-1-5" id = "myLanguage"><p>CHANGE LANGUAGE</p></summary>
+        <summary class="pure-u-3-5" id = "myTitle">Venues for ______</summary>
+        <summary class="pure-u-1-5" id = "myLanguage">
+            <form>CHANGE LANGUAGE</form>
+            <select>Choose language
+                <option>English</option>
+                <option>Spanish</option>
+            </select>
+        </summary>
 
         <!-- FILTER AND VENUE DISPLAY -->
-        <figure class="pure-u-1-5" id = "myFilter">INPUT HERE</figure>
-        <figure class="pure-u-4-5" id = "myList">LIST HERE</figure>
+        <figure class="pure-u-1-5" id = "myFilter">
+            <table class = "pure-table pure-table-bordered pure-table-horizontal">
+                <thead>
+                    <th>FILTERS</th>
+                </thead>
+                <tbody>
+                    <tr><th>American</th></tr>
+                    <tr><th>Chinese</th></tr>
+                    <tr><th>Barbecue</th></tr>
+                    <tr><th>Food Truck</th></tr>
+                    <tr><th>Free</th></tr>
+                </tbody>
+            </table>
+        </figure>
+        <figure class="pure-u-4-5" id = "myList">
+            <table class = "pure-table pure-table-bordered pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Number</th>
+                        <th>Rating</th>
+                        <th>Save</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr class = "pure-table-odd">
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr>
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr class = "pure-table-odd">
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr>
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>
 
         <!-- SUBMIT BUTTON -->
-        <button class="pure-u-1-5" id = "mySubmit">SUBMIT BUTTON</button>
+        <button class="button-secondary pure-button">Secondary Button</button>
     </main>
-</body>
 
+    <footer>
+        Made with love
+    </footer>
+</body>
 </html>

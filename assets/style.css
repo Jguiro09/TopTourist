@@ -13,9 +13,9 @@ main
 #myInput
 {
     border: 3px solid green;
-    text-align: center;
-    vertical-align: middle;
-    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 #myTitle
@@ -55,5 +55,23 @@ figure
 
 button
 {
-    margin: .5vh 1vw;
+    margin: .5vh 1vw 0vh 1vw;
+}
+
+table
+{
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead
+{
+    justify-content: center;
+}
+
+footer
+{
+    height: 2vh;
 }
