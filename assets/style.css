@@ -155,7 +155,7 @@ nav a:hover
     color: white;
 }
 
-input:checked + label
-{
-    background-color: green;
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
 }
