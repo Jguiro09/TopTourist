@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link href = "assets/reset.css" rel = "stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link href = "assets/style.css" rel = "stylesheet"/>
     <title>Document</title>
 </head>
@@ -15,24 +18,158 @@
 <body>
     <!-- HEADER -->
     <header class="pure-g">
-            <div class="pure-u-1-2" id = "myLogoContainer"><p>ENTER LOGO HERE</p></div>
-            <div class="pure-u-1-2" id = "myNavbarContainer"><p>Food Activities</p></div>
-    </header>
+        <div class="pure-u-2-5" id = "myLogoContainer">
+            <div id="logo">
+            <p>ENTER LOGO HERE</p> 
+            </div>
+        </div>
+            <div class = "pure-u-1-5" id = "title">
+                <h1>FOOD</h1>
+            </div>
+            <nav class = "pure-u-2-5">
+                <a href = "#">FOOD</a>
+                <a href = "#">ACTIVITIES</a>
+            </nav>
+        
+</header>
 
     <main class = "pure-g">
-        <!--SUB-HEADER -->
-        <summary class="pure-u-1-5" id = "myInput"><input type = "text"></input></summary>
-        <summary class="pure-u-3-5" id = "myTitle">TEST TESTJACOB TEST STAGING Celia TEST Test Dave Jonathan test test</summary>
-        <summary class="pure-u-1-5" id = "myLanguage"><p>CHANGE LANGUAGE</p></summary>
-
         <!-- FILTER AND VENUE DISPLAY -->
-        <figure class="pure-u-1-5" id = "myFilter">INPUT HERE</figure>
-        <figure class="pure-u-4-5" id = "myList">LIST HERE</figure>
+        <aside class="pure-u-1-5">
+            <table class = "pure-table" id = 'test4'>
+                <thead>
+                    <tr><th id = "test3">SEARCH HERE</th></tr>
+                </thead>
+                <tbody class = "myFilters">
+                    <form>
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter1" name = "American" value = "American">
+                                <label for = "American">American</label><br>
+                            </th>
+                        </tr>
 
-        <!-- SUBMIT BUTTON -->
-        <button class="pure-u-1-5" id = "mySubmit">SUBMIT BUTTON</button>
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter2" name = "Chinese" value = "Chinese">
+                                <label for = "Chinese">Chinese</label><br>
+                            </th>
+                        </tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter4" name = "Barbecue" value = "Barbecue">
+                                <label for = "Barbecue">Barbecue</label><br>
+                            </th>
+                            
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter5" name = "Food Truck" value = "Food Truck">
+                                <label for = "Barbecue">Barbecue</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter6" name = "Italian" value = "Italian">
+                                <label for = "Italian">Barbecue</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter7" name = "Mexican" value = "Mexican">
+                                <label for = "Mexican">Mexican</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter8" name = "Pizza" value = "Pizza">
+                                <label for = "Pizza">Pizza</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter9" name = "Seafood" value = "Seafood">
+                                <label for = "Seafood">Seafood</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class = "tableStyle">
+                                <input type = "checkbox" id = "filter10" name = "Spanish" value = "Spanish">
+                                <label for = "Spanish">Spanish</label><br>
+                            </th>
+                        </tr>
+                    </form>
+                </tbody>
+                <tfoot>
+                    <tr><th><input type = "text"></input></th></tr>
+                    <tr><th><button class="button-secondary pure-button" id = "buttonTest">Submit</button></th></tr>
+                </tfoot>
+            </table>
+        </aside>
+
+        
+        <figure class="pure-u-4-5 pure-table-bordered pure-table-horizontal" id = "myList">
+            <table class = "pure-table pure-table-bordered pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th id = "test3">Name</th>
+                        <th id = "test3">Address</th>
+                        <th id = "test3">Number</th>
+                        <th id = "test3">Rating</th>
+                        <th id = "test3">Save</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mconalds</td>
+                        <td>123 Street name</td>
+                        <td>111-111-1111</td>
+                        <td>1/5 Start</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr class = "pure-table-odd">
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr>
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr class = "pure-table-odd">
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                    <tr>
+                        <td>EX Name</td>
+                        <td>EX Location</td>
+                        <td>EX Number</td>
+                        <td>EX Rating</td>
+                        <td>EX Save</td>
+                    </tr>
+                </tbody>
+            </table>
+        </figure>      
     </main>
-    <script src="./assets/script.js"></script>
+
+    <script src="assets/script.js"></script>
+    <script src="./assets/hotelAPI.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
+    <footer>
+        Made with love
+    </footer>
+</body>
 </html>
