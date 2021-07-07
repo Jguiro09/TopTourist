@@ -1,40 +1,27 @@
 var userLocationInput; 
 var submitBtn = $('#submit');
 
-<<<<<<< HEAD
 
 function getFoodAPI() {
 
-var RequestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
+var requestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
 fetch(requestURL)
 .then(function (response) {
     return response.json();
     })
     .then(function (data) {
         
-      console.log(data.response.venues[8])
-=======
-function searchFood (foodType){
-var requestUrlFood = `https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259&query=${foodType}`; 
- //query drills down to specific type. Can find under name template literals
-fetch(requestUrlFood)
-    .then(function (response) {
-    return response.json();
-    })
-    .then(function (data) {
-        /// Name of business
-    console.log(data.response)
->>>>>>> 81dd5cf18a420617e19eb973819310a0eac7fee8
+      //console.log(data.response.venues[8])
     
     })
 
 }
-getAPI();
+getFoodAPI();
 
 ///Food drill down variables
-var foodVenueName = console.log(data.response.venues[0].name)
-var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
-var venueFoodType = console.log(data.response.venues[8].categories[0].shortName)
+//var foodVenueName = console.log(data.response.venues[0].name)
+//var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
+//var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
 
 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
@@ -58,6 +45,7 @@ getEventAPI();
 //Event drilldown variables
 var activityVenueName = console.log(data.response.venues[0].name);
 var activityVenueLocation = console.log(data.response.venues[0].location.formattedAddress);
+var activityType = console.log(data.response.venues[0].categories[0].shortName);
 
 
 
