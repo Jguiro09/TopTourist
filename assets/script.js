@@ -11,21 +11,29 @@ function getFoodAPI() {
         })
         .then(function (data) {
             
-          console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
+        console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
         
         })
     }
 
-
-while (check == undefined);
+function innit() // First function to run when webpage is loaded
 {
-   check = localStorage.getItem("check");
+    checkLocalStorage();
 }
 
- if ((check === 0)) {
-    getFoodAPI();
-    
-        }
+
+function checkLocalStorage() // Checks local storage to inform you on which API we are using
+{
+    if (check == null) // Checks we havent gotten a decision yet
+    {
+    check = JSON.parse(localStorage.getItem("check"));
+    checkLocalStorage(); // Re-runs the function until we get a proper answer
+    }
+    else if (check == 0)
+    {getFoodAPI();}
+    else if (check == 1)
+    {getEventAPI();}
+}
         
 
 
@@ -47,28 +55,18 @@ fetch(requestURL)
     })
     .then(function (data) {
         
-      console.log(data.response.venues)
+    console.log(data.response.venues)
     
     })
 
 }
 
-while (check == undefined);
-{
-   check = localStorage.getItem("check");
-}
-
- if ((check === 1)) {
-    getEventAPI();
-    
-        }
-
 
 
 //Event drilldown variables
-var activityVenueName = console.log(data.response.venues[0].name);
-var activityVenueLocation = console.log(data.response.venues[0].location.formattedAddress);
-var activityType = console.log(data.response.venues[0].categories[0].shortName);
+// var activityVenueName = console.log(data.response.venues[0].name);
+// var activityVenueLocation = console.log(data.response.venues[0].location.formattedAddress);
+// var activityType = console.log(data.response.venues[0].categories[0].shortName);
 
 
 
@@ -76,7 +74,6 @@ var activityType = console.log(data.response.venues[0].categories[0].shortName);
 
 
 userLocationInput = $('#userLocation').val(); 
-
 
 
 
@@ -97,7 +94,7 @@ userLocationInput = $('#userLocation').val();
 
 
 
-
+innit();
 
 
 

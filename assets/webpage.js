@@ -1,8 +1,20 @@
 // HTML Variables
 var checkbox = $("input[name=checkbox]"); // Grabs all of the checkboxes
-var submitBtn = $("#buttonTest"); // Detects when submit is clicked
+var submitBtn = $(".submitStyle"); // Detects when submit is clicked
+var title = $("#title");
 
 var filters = []; // 
+
+if(title.children().text() == "FOOD")
+{
+    localStorage.setItem("check", 0);
+}
+
+else
+{
+    localStorage.setItem("check", 1);
+    console.log("good luck");
+}
 
 checkbox.click('change', function() {
 if (this.checked) {
@@ -22,6 +34,7 @@ if (this.checked) {
     }
     
 } 
+
 else {
     filters.splice(filters.indexOf($.inArray($(this).val(), filters)), 1);
     console.log(filters);
@@ -31,5 +44,6 @@ else {
 
 submitBtn.click(function ()
 {
+    localStorage.setItem("filters", filters.toString());
     console.log(filters.toString());
 })

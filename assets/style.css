@@ -1,14 +1,14 @@
-*
-{
-    margin: 0;
-    color: white;
-}
-
 :root
 {
     --accent-color: #225B94;
     --background-color: #E6F4F1;
     --main-color: #0066CC;
+}
+
+*
+{
+    margin: 0;
+    color: white;
 }
 
 header
@@ -27,11 +27,6 @@ main
 body
 {
     background-color: var(--background-color); 
-}
-
-#myList
-{
-    width: 74%;
 }
 
 aside, figure
@@ -63,9 +58,19 @@ footer
         background:var(--main-color);
 }
 
+td
+{
+    color: black;
+}
+
 tr
 {
     text-align: center;
+}
+
+#myList
+{
+    width: 74%;
 }
 
 #myLogoContainer
@@ -81,13 +86,6 @@ header > nav
     justify-self: center;
     text-align: center;
 }
-/* 
-nav
-{
-    align-self: center;
-    justify-self: center;
-    text-align: center;
-} */
 
 nav a
 {
@@ -102,7 +100,7 @@ nav a:hover
     color: #E88C31;
 }
 
-thead
+#test5
 {
     color: black;
 }
@@ -136,7 +134,7 @@ thead
     background-color: var(--main-color);
 }
 
-#buttonTest
+.submitStyle
 {
     background-color: var(--main-color);
     color: white;
