@@ -1,6 +1,7 @@
 var userLocationInput; 
 var submitBtn = $('#submit');
 
+<<<<<<< HEAD
 
 function getFoodAPI() {
 
@@ -12,6 +13,18 @@ fetch(requestURL)
     .then(function (data) {
         
       console.log(data.response.venues[8])
+=======
+function searchFood (foodType){
+var requestUrlFood = `https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259&query=${foodType}`; 
+ //query drills down to specific type. Can find under name template literals
+fetch(requestUrlFood)
+    .then(function (response) {
+    return response.json();
+    })
+    .then(function (data) {
+        /// Name of business
+    console.log(data.response)
+>>>>>>> 81dd5cf18a420617e19eb973819310a0eac7fee8
     
     })
 
