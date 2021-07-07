@@ -1,22 +1,35 @@
 var userLocationInput; 
 var submitBtn = $('#submit');
-
+var check 
 
 function getFoodAPI() {
 
-var requestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
-fetch(requestURL)
-.then(function (response) {
-    return response.json();
-    })
-    .then(function (data) {
+    var requestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
+    fetch(requestURL)
+    .then(function (response) {
+        return response.json();
+        })
+        .then(function (data) {
+            
+          console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
         
-      //console.log(data.response.venues[8])
-    
-    })
+        })
+    }
 
+
+while (check == undefined);
+{
+   check = localStorage.getItem("check");
 }
-getFoodAPI();
+
+ if ((check === 0)) {
+    getFoodAPI();
+    
+        }
+        
+
+
+
 
 ///Food drill down variables
 //var foodVenueName = console.log(data.response.venues[0].name)
@@ -39,7 +52,17 @@ fetch(requestURL)
     })
 
 }
-getEventAPI();
+
+while (check == undefined);
+{
+   check = localStorage.getItem("check");
+}
+
+ if ((check === 1)) {
+    getEventAPI();
+    
+        }
+
 
 
 //Event drilldown variables
