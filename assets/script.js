@@ -8,7 +8,7 @@ fetch(requestUrlFood)
     })
     .then(function (data) {
         /// Name of business
-      console.log(data.response)
+    console.log(data.response)
     
     })}
 searchFood ("pizza"); //need to stringify could do it in the search input function !! Look up

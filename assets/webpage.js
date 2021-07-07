@@ -1,7 +1,8 @@
-var checkbox = $("input[name=checkbox]");
-var submitBtn = $("#buttonTest");
+// HTML Variables
+var checkbox = $("input[name=checkbox]"); // Grabs all of the checkboxes
+var submitBtn = $("#buttonTest"); // Detects when submit is clicked
 
-var filters = [];
+var filters = []; // 
 
 checkbox.click('change', function() {
 if (this.checked) {
