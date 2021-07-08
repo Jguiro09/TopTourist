@@ -16,7 +16,8 @@
 </head>
 
 <body>
-    <!-- HEADER -->
+
+    <!---------HEADER------- -->
     <header class="pure-g">
         <div class="pure-u-2-5" id="myLogoContainer">
             <div id="logo">
@@ -33,7 +34,8 @@
     </header>
 
     <main class="pure-g">
-        <!-- FILTER AND VENUE DISPLAY -->
+
+        <!--------FILTER AND VENUE DISPLAY-------->
         <aside class="pure-u-1-5">
             <table class="pure-table" id='test4'>
                 <thead>
@@ -42,12 +44,14 @@
                     <tr><th><button class="button-secondary pure-button submitStyle" id = "submit" >Submit</button></th></tr>
                     <tr><th class = "aside2" id = "test3">What Are You Looking For?</th></tr>
                         <tr class = "pure-g">
-                            <th class = "pure-u-8-24 aside2" id = "test3">ONE</th>
-                            <th class = "pure-u-8-24 aside2" id = "test3">TWO</th>
-                            <th class = "pure-u-8-24 aside2" id = "test3">THREE</th>
+                            <th class = "pure-u-8-24 aside2" id = "test3"><button class = "button-secondary pure-button" id = "foodBtn">Food</button></th>
+                            <th class = "pure-u-8-24 aside2" id = "test3"><button class = "button-secondary pure-button" id = "activitiesBtn">Activites</button></th>
+                            <th class = "pure-u-8-24 aside2" id = "test3"><button class = "button-secondary pure-button" id = "hotelBtn">Hotels</button></th>
                         </tr>
                 </thead>
-                <tbody class = "aside3">
+
+                <!-- FOOD FILTER -->
+                <tbody class = "aside3" id = "foodFilter">
                     <form>
                         <tr>
                             <th class="tableStyle">
@@ -104,12 +108,106 @@
                         </tr>
                     </form>
                 </tbody>
+
+                <!-- EVENT FILTER -->
+                <tbody class = "aside4" id = "eventFilter">
+                    <form>
+                        <tr>
+                            <th class="tableStyle">
+                                <input type="checkbox" id="movieTheater" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d17f941735">
+                                <label for="movieTheater">Movie Theater</label><br>
+                            </th>
+                        </tr>
+
+                        <tr class="test5">
+                            <th class="tableStyle">
+                                <input type="checkbox" id="museum" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d181941735">
+                                <label for="museum">Museum</label><br>
+                            </th>
+                        </tr>
+                        <th class="tableStyle">
+                            <input type="checkbox" id="musicVenue" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d1e5931735">
+                            <label for="musicVenue">Music Venue</label><br>
+                        </th>
+
+
+                        <tr class>
+                            <th class="tableStyle">
+                                <input type="checkbox" id="performingArtsVenue" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d1f2931735">
+                                <label for="performingArtsVenue">Performing Arts Venue</label><br>
+                            </th>
+                        </tr>
+
+                        <tr class>
+                            <th class="tableStyle">
+                                <input type="checkbox" id="stadium" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d184941735">
+                                <label for="stadium">Stadium</label><br>
+                            </th>
+                        </tr>
+
+                        <tr class>
+                            <th class="tableStyle">
+                                <input type="checkbox" id="themePark" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d182941735">
+                                <label for="themePark">Theme Park</label><br>
+                            </th>
+                        </tr>
+                    </form>
+                </tbody>
+
+                <!-- HOTEL FILTER -->
+                <tbody class = "aside3" id = "hotelFilter">
+                    <form>
+                        <tr>
+                            <th class="tableStyle">
+                                <input type="range" id="priceRange" name="checkbox" min = "50" max = "500" value = "250">
+                                <label for="priceRange">Price Range</label><br>
+                            </th>
+                        </tr>
+
+                        <tr class="test5">
+                            <th class="tableStyle">
+                                <input type="checkbox" id="checkIn" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d181941735">
+                                <label for="checkIn">Checkin</label><br>
+                            </th>
+                        </tr>
+                        
+                        <tr>
+                            <th class="tableStyle">
+                            <input type="checkbox" id="checkOut" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d1e5931735">
+                            <label for="checkOut">Checkout</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class="tableStyle">
+                            <input type="checkbox" id="starRating" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d1e5931735">
+                            <label for="starRating">Star Rating</label><br>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <th class="tableStyle">
+                            <input type="checkbox" id="starRating" class="visually-hidden" name="checkbox" value="4bf58dd8d48988d1e5931735">
+                            <label for="starRating">Star Rating</label><br>
+                            </th>
+                        </tr>
+                        
+                    </form>
+                </tbody>
+
                 <tfoot>
+                    <tr>
+                        <th class="tableStyle">
+                            <tr><th><button class="button-secondary pure-button submitStyle" id = "search" >Search</button></th></tr>
+                        </th>
+                    </tr>
                 </tfoot>
             </table>
         </aside>
 
 
+
+        <!-- OUTPUT TABLE -->
         <figure class="pure-u-4-5 pure-table-bordered pure-table-horizontal" id="myList">
             <table class="pure-table pure-table-bordered pure-table-horizontal">
                 <thead>
@@ -120,46 +218,20 @@
                     </tr>
                 </thead>
                 <tbody id="uservenue">
-                    <!-- <tr>
-                        <td>Mconalds</td>
-                        <td>123 Street name</td>
-                        <td>1/5 Start</td>
-                    </tr>
-                    <tr class="pure-table-odd">
-                        <td>EX Name</td>
-                        <td>EX Location</td>
-                        <td>EX FoodType</td>
-                    </tr>
-                    <tr>
-                        <td>EX Name</td>
-                        <td>EX Location</td>
-                        <td>EX FoodType</td>
-                    </tr>
-                    <tr class="pure-table-odd">
-                        <td>EX Name</td>
-                        <td>EX Location</td>
-                        <td>EX FoodType</td>
-                    </tr>
-                    <tr>
-                        <td>EX Name</td>
-                        <td>EX Location</td>
-                        <td>EX FoodType</td>
-                    </tr> -->
                 </tbody>
             </table>
         </figure>
     </main>
-    <!-- 1. Create IDS/Classes that will allow you to manipulate the DOM (specifically I would look for an ID in <thead>
-        2. Find a way to create elements in Jquery (specifically Tablerow )
-        3. Add text to tablehead and/or tablerow
-        4. Append the new elements to your HTML elements -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="assets/webpage.js"></script>
+<!-- 
+    <script src="assets/script.js"></script> -->
 
-    <script src="assets/script.js"></script>
-
-    <script src="assets/hotelAPI.js"></script>
+    <!-- <script src="assets/hotelAPI.js"></script> -->
 </body>
 
 <footer>
