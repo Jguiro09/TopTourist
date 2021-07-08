@@ -30,8 +30,6 @@ function getFoodAPI() {
                 var markup = "<tr><td> " + foodVenueName + " </td><td>" + foodVenueLocation + "</td><td>" + venueFoodType + "</td></tr>";
                 $("#uservenue").append(markup);
 
-
-
             }
 
         })
