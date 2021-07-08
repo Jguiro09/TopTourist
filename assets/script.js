@@ -34,15 +34,14 @@ function checkLocalStorage() // Checks local storage to inform you on which API 
     else if (check == 1)
     {getEventAPI();}
 }
-        
 
 
 
 
 ///Food drill down variables
-//var foodVenueName = console.log(data.response.venues[0].name)
-//var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
-//var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
+var foodVenueName = console.log(data.response.venues[0].name)
+var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
+var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
 
 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
@@ -89,10 +88,6 @@ userLocationInput = $('#userLocation').val();
         
         //})
 //}
-
-
-
-
 
 innit();
 

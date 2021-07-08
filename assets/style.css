@@ -58,7 +58,7 @@ footer
         background:var(--main-color);
 }
 
-td
+td, input
 {
     color: black;
 }
