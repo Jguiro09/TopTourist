@@ -1,8 +1,12 @@
 var userLocationInput; 
 var submitBtn = $('#submit');
 var check 
+///Food drill down variables
+
 
 function getFoodAPI() {
+
+  
 
     var requestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
     fetch(requestURL)
@@ -10,9 +14,13 @@ function getFoodAPI() {
         return response.json();
         })
         .then(function (data) {
-            
-        console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
-        
+
+        var foodVenueName = data.response.venues[2].name;
+        var foodVenueLocation = data.response.venues[2].location.formattedAddress;
+        var venueFoodType = data.response.venues[2].categories[0].shortName;
+
+        console.log(foodVenueName, foodVenueLocation, venueFoodType)
+
         })
     }
 
@@ -39,10 +47,7 @@ function checkLocalStorage() // Checks local storage to inform you on which API 
 
 
 
-///Food drill down variables
-//var foodVenueName = console.log(data.response.venues[0].name)
-//var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
-//var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
+
 
 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
