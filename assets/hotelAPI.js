@@ -12,8 +12,8 @@ return response.json();
 .then(function (data)
 {
 console.log(data);
-var userLocationInput = (data.data.body.searchResults.results[0].address);
-var userRatePlan = (data.data.body.searchResults.results[0].ratePlan.price);
+var userLocationInput = data.data.body.searchResults.results[0].address;
+var userRatePlan = data.data.body.searchResults.results[0].ratePlan.price;
 // var userRating = (data.data.body.searchResults.options.choices);
 
 console.log(userLocationInput,userRatePlan);

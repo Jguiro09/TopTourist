@@ -21,18 +21,15 @@ function getFoodAPI() {
             // var activityType = $("#activityType");
 
 
-            for (let index = 0; index < 5; index++) {
-                // Event drilldown variables
-                var activityVenueName = data.response.venues[index].name;
-                var activityVenueLocation = data.response.venues[index].location.formattedAddress[0];
-                var activityType = data.response.venues[index].categories[0].shortName;
+            // for (let index = 0; index < 5; index++) {
+            //     // Event drilldown variables
+            //     var activityVenueName = data.response.venues[index].name;
+            //     var activityVenueLocation = data.response.venues[index].location.formattedAddress[0];
+            //     var activityType = data.response.venues[index].categories[0].shortName;
 
-                var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
-                $("#uservenue").append(markup);
-
-
-
-            }
+            //     var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
+            //     $("#uservenue").append(markup);
+            // }
 
         })
 }
