@@ -125,12 +125,12 @@ innit();
 //}) 
 //console.log(data.response.venues[3].location) 
 
-$(document).ready(function() {
-            $(".add-row").click(function() {
-                var foodVenueName = $("foodVenueName").data();
-                var activityVenueLocation = $("#activityVenueLocation").();
-                var activityType = $("#activityType").val();
+// $(document).ready(function() {
+//             $(".add-row").click(function() {
+//                 var foodVenueName = $("foodVenueName").data();
+//                 var activityVenueLocation = $("#activityVenueLocation").();
+//                 var activityType = $("#activityType").val();
 
-                var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
-                $("table tbody").append(markup);
-            });
+//                 var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
+//                 $("table tbody").append(markup);
+//             });
