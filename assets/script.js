@@ -1,6 +1,7 @@
 var userLocationInput;
 var submitBtn = $('#submit');
 var check
+getFoodAPI();
 
 function getFoodAPI() {
 
@@ -11,7 +12,28 @@ function getFoodAPI() {
         })
         .then(function(data) {
 
-            console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
+            // Event drilldown variables
+            var activityVenueName = data.response.venues[0].name;
+            var activityVenueLocation = data.response.venues[0].location.formattedAddress[0];
+            var activityType = data.response.venues[0].categories[0].shortName;
+
+            // var foodVenueName = $("foodVenueName");
+            // var activityVenueLocation = $("#activityVenueLocation");
+            // var activityType = $("#activityType");
+
+
+            for (let index = 0; index < 5; index++) {
+                // Event drilldown variables
+                var activityVenueName = data.response.venues[index].name;
+                var activityVenueLocation = data.response.venues[index].location.formattedAddress[0];
+                var activityType = data.response.venues[index].categories[0].shortName;
+
+                var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
+                $("#uservenue").append(markup);
+
+
+
+            }
 
         })
 }
@@ -59,11 +81,6 @@ function getEventAPI() {
 
 
 
-//Event drilldown variables
-// var activityVenueName = console.log(data.response.venues[0].name);
-// var activityVenueLocation = console.log(data.response.venues[0].location.formattedAddress);
-// var activityType = console.log(data.response.venues[0].categories[0].shortName);
-
 
 
 
@@ -90,7 +107,7 @@ userLocationInput = $('#userLocation').val();
 
 
 
-innit();
+// innit();
 
 
 
@@ -123,14 +140,4 @@ innit();
 //This drills down to specific location
 //console.log(data.response.venues)**//
 //}) 
-//console.log(data.response.venues[3].location) 
-
-// $(document).ready(function() {
-//             $(".add-row").click(function() {
-//                 var foodVenueName = $("foodVenueName").data();
-//                 var activityVenueLocation = $("#activityVenueLocation").();
-//                 var activityType = $("#activityType").val();
-
-//                 var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" + email + "</td></tr>";
-//                 $("table tbody").append(markup);
-//             });
+//console.log(data.response.venues[3].location)
