@@ -1,10 +1,10 @@
-var userLocationInput;
+var userLocationInput = "chicago";
 var submitBtn = $('#submit');
 var check
 getFoodAPI();
 
 function getFoodAPI() {
-    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
+    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
     fetch(requestURL)
         .then(function (response) {
             return response.json();
@@ -35,10 +35,7 @@ function getFoodAPI() {
         })
 }
 
-function innit() // First function to run when webpage is loaded
-{
-    checkLocalStorage();
-}
+
 
 
 function checkLocalStorage() // Checks local storage to inform you on which API we are using
@@ -60,7 +57,7 @@ function checkLocalStorage() // Checks local storage to inform you on which API 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
 
 function getEventAPI() {
-    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7104d754a06370d81259';
+    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=4d4b7104d754a06370d81259';
     fetch(requestURL)
         .then(function (response) {
             return response.json();
@@ -89,13 +86,10 @@ function getEventAPI() {
 }
 
 
-
-
-
-
-
-
-userLocationInput = $('#userLocation').val();
+function innit() // First function to run when webpage is loaded
+{
+    checkLocalStorage();
+}
 
 
 
