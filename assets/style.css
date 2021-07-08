@@ -19,69 +19,8 @@ header
     background-color: var(--main-color);
 }
 
-main
+nav
 {
-    justify-content: space-between;
-}
-
-body
-{
-    background-color: var(--background-color); 
-}
-
-aside, figure
-{
-    height: 75vh;
-    margin: 2vh 1vw;
-}
-
-button
-{
-    margin-bottom: 1vh;
-}
-
-table
-{
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    border-collapse: collapse;
-}
-
-footer
-{
-        position:fixed;
-        left:0px;
-        bottom:0px;
-        height:5vh;
-        width:100%;
-        background:var(--main-color);
-}
-
-td, input
-{
-    color: black;
-}
-
-tr
-{
-    text-align: center;
-}
-
-#myList
-{
-    width: 74%;
-}
-
-#myLogoContainer
-{
-    display: flex;
-    height: 100%;
-}
-
-header > nav
-{
-    width: 100%;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -100,6 +39,93 @@ nav a:hover
     color: #E88C31;
 }
 
+main
+{
+    justify-content: space-between;
+    height: 75vh;
+    margin: 2vh 1vw;
+}
+
+body
+{
+    background-color: var(--background-color); 
+}
+
+aside, figure
+{
+    height: 100%;
+}
+
+button
+{
+    margin-bottom: 1vh;
+}
+
+table
+{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+thead > tr > th
+{
+    position: sticky;
+    top: 0;
+}
+
+td, input
+{
+    color: black;
+}
+
+tr
+{
+    text-align: center;
+}
+
+footer
+{
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height:5vh;
+        width:100%;
+        background:var(--main-color);
+}
+
+.submitStyle
+{
+    background-color: var(--main-color);
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.tableStyle
+{
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+
+
+#myList
+{
+    width: 74%;
+}
+
+#myLogoContainer
+{
+    display: flex;
+    height: 100%;
+}
+
 #test5
 {
     color: black;
@@ -113,52 +139,8 @@ nav a:hover
     height: 100%;
 }
 
-#title h1
-{
-    text-align: center;
-}
-
-#test
-{
-    background-color: var(--accent-color);
-}
-
-#test2
-{
-    background-color: #E88C31;
-    color: white;
-}
 
 #test3
 {
     background-color: var(--main-color);
-}
-
-.submitStyle
-{
-    background-color: var(--main-color);
-    color: white;
-    font-family: Roboto;
-    font-weight: bold;
-}
-
-#a
-{
-    opacity: 0;
-}
-
-#a:checked
-{
-    color: #E88C31;
-}
-
-.tableStyle
-{
-    background-color: var(--accent-color);
-    color: white;
-}
-
-.visually-hidden {
-    position: absolute;
-    left: -100vw;
 }

@@ -8,6 +8,7 @@ var aside3 = $('.aside3');
 var filters = []; // An array for the filters to be put in to
 
 aside2.slideUp(0);
+// aside3.slideUp(0);
 
 // if(title.children().text() == "FOOD") // Checks if the 
 // {
