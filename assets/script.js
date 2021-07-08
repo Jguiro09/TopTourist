@@ -11,23 +11,23 @@ function getFoodAPI() {
         })
         .then(function(data) {
 
-            // Event drilldown variables
-            var activityVenueName = data.response.venues[0].name;
-            var activityVenueLocation = data.response.venues[0].location.formattedAddress[0];
-            var activityType = data.response.venues[0].categories[0].shortName;
 
             // var foodVenueName = $("foodVenueName");
             // var activityVenueLocation = $("#activityVenueLocation");
             // var activityType = $("#activityType");
 
+            // //Food drill down variables
+            // var foodVenueName = console.log(data.response.venues[0].name)
+            // var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
+            // var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
 
             for (let index = 0; index < 5; index++) {
-                // Event drilldown variables
-                var activityVenueName = data.response.venues[index].name;
-                var activityVenueLocation = data.response.venues[index].location.formattedAddress[0];
-                var activityType = data.response.venues[index].categories[0].shortName;
+                // food drilldown variables
+                var foodVenueName = data.response.venues[index].name;
+                var foodVenueLocation = data.response.venues[index].location.formattedAddress.toString();
+                var venueFoodType = data.response.venues[index].categories[0].shortName;
 
-                var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
+                var markup = "<tr><td> " + foodVenueName + " </td><td>" + foodVenueLocation + "</td><td>" + venueFoodType + "</td></tr>";
                 $("#uservenue").append(markup);
 
 
@@ -56,10 +56,7 @@ function checkLocalStorage() // Checks local storage to inform you on which API 
 
 
 
-///Food drill down variables
-//var foodVenueName = console.log(data.response.venues[0].name)
-//var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
-//var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
+
 
 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
@@ -71,6 +68,12 @@ function getEventAPI() {
             return response.json();
         })
         .then(function(data) {
+
+            // Event drilldown variables
+            var activityVenueName = data.response.venues[0].name;
+            var activityVenueLocation = data.response.venues[0].location.formattedAddress[0];
+            var activityType = data.response.venues[0].categories[0].shortName;
+
 
             console.log(data.response.venues)
 
