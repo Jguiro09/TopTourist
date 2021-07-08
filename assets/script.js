@@ -3,19 +3,18 @@ var submitBtn = $('#submit');
 var check
 
 function getFoodAPI() {
-
-    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
+    var requestURL ='https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=austin&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
     fetch(requestURL)
-        .then(function(response) {
-            return response.json();
+    .then(function (response) {
+        return response.json();
         })
-        .then(function(data) {
-
-            console.log(data.response.venues.name.location.formattedAddress.categories[""].shortName);
-
+        .then(function (data) {
+        var foodVenueName = data.response.venues[2].name;
+        var foodVenueLocation = data.response.venues[2].location.formattedAddress;
+        var venueFoodType = data.response.venues[2].categories[0].shortName;
+        console.log(foodVenueName, foodVenueLocation, venueFoodType)
         })
-}
-
+    }
 function innit() // First function to run when webpage is loaded
 {
     checkLocalStorage();
