@@ -1,6 +1,7 @@
-var userLocationInput = "chicago";
-var submitBtn = $('#submit');
+var userLocationInput; 
 var check
+var filterOptions
+
 getFoodAPI();
 
 function getFoodAPI() {
@@ -44,7 +45,28 @@ function checkLocalStorage() // Checks local storage to inform you on which API 
     {
         check = JSON.parse(localStorage.getItem("check"));
         checkLocalStorage(); // Re-runs the function until we get a proper answer
-    } else if (check == 0) { getFoodAPI(); } else if (check == 1) { getEventAPI(); }
+    } 
+    
+    else if (check.check == 0) 
+    
+    { 
+       userLocationInput = check.name;
+       filterOptions = check.filter;
+        getFoodAPI(); 
+    
+    } 
+    
+    
+    else if (check.check == 1) 
+
+    { 
+        userLocationInput = check.name;
+        filterOptions = check.filter;
+         getEventAPI(); 
+     
+     } 
+    
+    { getEventAPI(); }
 }
 
 
