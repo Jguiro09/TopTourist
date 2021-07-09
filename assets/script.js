@@ -1,4 +1,4 @@
-var userLocationInput; 
+var userLocationInput;
 var check
 var filterOptions
 
