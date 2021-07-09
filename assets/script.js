@@ -1,11 +1,10 @@
 var userLocationInput; 
 var check
 var filterOptions
-
-getFoodAPI();
+var searchBtn = $('#search');
 
 function getFoodAPI() {
-    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=4d4b7105d754a06374d81259';
+    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=' + check.filter;
     fetch(requestURL)
         .then(function (response) {
             return response.json();
@@ -22,6 +21,9 @@ function getFoodAPI() {
             // var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
             // var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
 
+            var title = "<tr><th>Name</th><th>Address</th><th>Type</th></tr>"
+            $("#uservenue").append(title);
+
             for (let index = 0; index < 5; index++) {
                 // food drilldown variables
                 var foodVenueName = data.response.venues[index].name;
@@ -37,55 +39,35 @@ function getFoodAPI() {
 }
 
 
-
-
-function checkLocalStorage() // Checks local storage to inform you on which API we are using
+searchBtn.click(function ()
 {
-    if (check == null) // Checks we havent gotten a decision yet
     {
         check = JSON.parse(localStorage.getItem("check"));
-        checkLocalStorage(); // Re-runs the function until we get a proper answer
-    } 
-    
-    else if (check.check == 0) 
-    
-    { 
-       userLocationInput = check.name;
-       filterOptions = check.filter;
-        getFoodAPI(); 
-    
-    } 
-    
-    
-    else if (check.check == 1) 
-
-    { 
         userLocationInput = check.name;
         filterOptions = check.filter;
-         getEventAPI(); 
-     
-     } 
-    
-    { getEventAPI(); }
-}
+        if (check.check == 0) 
+        
+        { getFoodAPI(); } 
+        
+        
+        else if (check.check == 1) 
 
-
-
-
-
-
-
+        { getEventAPI();  } 
+    }
+})
 
 //This is the event request URL with appropriate category ID "Arts & Entertainment 4d4b7104d754a06370d81259"
 
 function getEventAPI() {
-    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=4d4b7104d754a06370d81259';
+    var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=' + check.filter;
     fetch(requestURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
 
+            var title = "<tr><th>Name</th><th>Address</th><th>Type</th></tr>"
+            $("#uservenue").append(title);
 
             for (let index = 0; index < 5; index++) {
                 // food drilldown variables
@@ -107,14 +89,6 @@ function getEventAPI() {
 
 }
 
-
-function innit() // First function to run when webpage is loaded
-{
-    checkLocalStorage();
-}
-
-
-
 //This is the user location input
 //function getAPI() {
 //fetch('https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userInputLocation + '&intent=browse&radius=10000&limit=20')
@@ -128,11 +102,6 @@ function innit() // First function to run when webpage is loaded
 //})
 //}
 
-
-
-
-
-// innit();
 
 
 

@@ -12,9 +12,13 @@ var searchBtn = $('#search');
 var checkFilter;
 var userLocation = $('#userLocation')
 var city;
+var checkIn = $('#checkIn');
+var checkOut = $('#checkOut');
+var adults = $('#adults');
 
 var filters = []; // An array for the filters to be put in to
 
+window.localStorage.clear();
 aside2.slideUp(0);
 foodFilter.slideUp(0);
 eventFilter.slideUp(0);
@@ -31,11 +35,6 @@ checkbox.click('change', function () {
             console.log(filters);
             console.log($.inArray($(this).val(), filters));
         }
-
-        else {
-            console.log("Already In!");
-        }
-
     }
 
     else {
@@ -47,21 +46,40 @@ checkbox.click('change', function () {
 
 
 searchBtn.click(function () {
-    var send =
+    
+    if (checkFilter != 2)
+        {
+            var send =
+            {
+                check: checkFilter,
+                filter: filters.toString(),
+                name: city
+            }
+            console.log(send);
+            localStorage.setItem("check", JSON.stringify(send));
+        }
+
+    else if (checkFilter == 2)
     {
-        check: checkFilter,
-        filter: filters.toString(),
-        name: city
+        var send = 
+        {
+            check: checkFilter,
+            name: city,
+            checkIn: checkIn.val(),
+            checkOut:checkOut.val(),
+            adults: adults.val()
+        }
+        localStorage.setItem("check", JSON.stringify(send));
+        console.log(send);
     }
-    console.log(send);
-    localStorage.setItem("check", JSON.stringify(send));
-})
+    
+});
 
 
 submitBtn.click(function () {
     aside2.slideDown();
     city = userLocation.val();
-})
+});
 
 foodBtn.click(function () {
     eventFilter.slideUp("slow");
@@ -74,7 +92,7 @@ foodBtn.click(function () {
     checkFilter = 0;
     console.log(checkFilter);
     filters = [];
-})
+});
 
 activitiesBtn.click(function () {
     foodFilter.slideUp("slow");
@@ -87,7 +105,7 @@ activitiesBtn.click(function () {
     checkFilter = 1;
     console.log(checkFilter);
     filters = [];
-})
+});
 
 hotelBtn.click(function () {
     foodFilter.slideUp("slow");
@@ -99,4 +117,4 @@ hotelBtn.click(function () {
     checkFilter = 2;
     console.log(checkFilter);
     filters = [];
-})
+});
