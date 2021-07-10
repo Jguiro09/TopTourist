@@ -41,7 +41,8 @@ checkbox.click('change', function () {
 });
 
 
-searchBtn.click(function () {
+submitBtn.click(function (event) {
+    city = userLocation.val();
     if (checkFilter != 2)
         {
             var send =
@@ -70,46 +71,23 @@ searchBtn.click(function () {
     
 });
 
-
-submitBtn.click(function () {
-    aside2.slideDown();
-    city = userLocation.val();
-});
-
 foodBtn.click(function () {
-    eventFilter.slideUp("slow");
-    hotelFilter.slideUp("slow");
-    searchBtn.slideDown();
-    setTimeout(function () {
-        searchBtn.slideDown();
-        foodFilter.slideDown();
-    }, 600)
     checkFilter = 0;
+    console.log("food!")
     console.log(checkFilter);
     filters = [];
 });
 
 activitiesBtn.click(function () {
-    foodFilter.slideUp("slow");
-    hotelFilter.slideUp("slow");
-    searchBtn.slideDown();
-    setTimeout(function () {
-        searchBtn.slideDown();
-        eventFilter.slideDown();
-    }, 600)
     checkFilter = 1;
+    console.log("events!");
     console.log(checkFilter);
     filters = [];
 });
 
 hotelBtn.click(function () {
-    foodFilter.slideUp("slow");
-    eventFilter.slideUp("slow");
-    setTimeout(function () {
-        searchBtn.slideDown();
-        hotelFilter.slideDown();
-    }, 600)
     checkFilter = 2;
+    console.log("hotel!");
     console.log(checkFilter);
     filters = [];
 });

@@ -17,7 +17,7 @@
 	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
 
 	<!--Import materialize.css-->
-	<link href="style.css" rel="stylesheet">
+	<link href="assets/style.css" rel="stylesheet">
 	<title>Document</title>
 </head>
 
@@ -126,14 +126,14 @@
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 
 						<!-- Modal Trigger -->
-						<button class="waves-effect waves-light btn modal-trigger" data-target="test">Modal</button>
+						<button class="waves-effect waves-light btn modal-trigger" id = "foodBtn" data-target="test">Modal</button>
 						<!-- Modal Structure -->
 						<div id="test" class="modal">
 							<div class="modal-content">
 								<h4>Add an Image</h4>
 
 								<div class="row">
-									<form class="col s12">
+									<form class="col s12" onsubmit="return false">
 										<!-- American / Chinese -->
 										<div class="row modal-form-row">
 											<div class="input-field col s6">
@@ -227,14 +227,14 @@
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 
 						<!-- Modal Trigger -->
-						<button class="waves-effect waves-light btn modal-trigger" data-target="modal2">Modal</button>
+						<button class="waves-effect waves-light btn modal-trigger" id = "activitiesBtn" data-target="modal2">Modal</button>
 						<!-- Modal Structure -->
 						<div id="modal2" class="modal">
 							<div class="modal-content">
 								<h4>Add an Image</h4>
 
 								<div class="row">
-									<form class="col s12">
+									<form class="col s12" onsubmit="return false">
 										<!-- American / Chinese -->
 										<div class="row modal-form-row">
 											<div class="input-field col s6">
@@ -289,7 +289,7 @@
 										<div class = "row">
 											<div class = "input-field col s12 left-align">
 												<br>
-												<button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+												<button class="btn waves-effect waves-light" id = "submit" type="submit" name="action">Submit<i class="material-icons right">send</i></button>
 											</div>
 										</div>
 									</form>
@@ -308,14 +308,14 @@
 						<h4>Hotels</h4>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem, velit.</p>
 
-						<button class="waves-effect waves-light btn modal-trigger" data-target="modal3">Modal</button>
+						<button class="waves-effect waves-light btn modal-trigger" id = "hotelBtn" data-target="modal3">Modal</button>
 						<!-- Modal Structure -->
 						<div id="modal3" class="modal">
 							<div class="modal-content">
 								<h4>Add an Image</h4>
 
 								<div class="row">
-									<form class="col s12">
+									<form class="col s12" onsubmit="return false">
 										<!-- American / Chinese -->
 										<div class="row modal-form-row">
 											<div class="input-field col s4">
@@ -561,7 +561,7 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 	<script src = "assets/webpage.js"></script>
 	<script src = "assets/filters.js"></script>
-	<script src="script.js"></script>
+	<!-- <script src="assets/script.js"></script> -->
 </body>
 
 </html>
