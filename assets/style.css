@@ -149,7 +149,7 @@ footer
 }
 
 
-#test3
+.test3, th
 {
     background-color: var(--main-color);
 }
@@ -157,5 +157,10 @@ footer
 #test4 > thead
 {
     height: 14vh;
+}
+
+#test12
+{
+    height: 25%;
 }
 
