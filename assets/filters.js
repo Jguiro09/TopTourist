@@ -1,15 +1,9 @@
-console.log("connected!");
 // HTML Variables
 var checkbox = $("input[name=checkbox]"); // Grabs all of the checkboxes
-var submitBtn = $(".submitStyle"); // Detects when submit is clicked
-var aside2 = $('.aside2');
-var foodFilter = $('#foodFilter');
-var eventFilter = $('#eventFilter');
-var hotelFilter = $('#hotelFilter')
+var submitBtn = $(".submitInfo"); // Detects when submit is clicked
 var foodBtn = $('#foodBtn');
 var activitiesBtn = $('#activitiesBtn');
 var hotelBtn = $('#hotelBtn');
-var searchBtn = $('#search');
 var checkFilter;
 var userLocation = $('#userLocation')
 var city;
@@ -41,7 +35,7 @@ checkbox.click('change', function () {
 });
 
 
-submitBtn.click(function (event) {
+submitBtn.click(function () {
     city = userLocation.val();
     if (checkFilter != 2)
         {

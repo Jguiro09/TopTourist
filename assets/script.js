@@ -1,7 +1,7 @@
 var userLocationInput; 
 var check
 var filterOptions
-var searchBtn = $('#search');
+var searchBtn = $('.submitInfo');
 
 function getFoodAPI() {
     var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=' + check.filter;
