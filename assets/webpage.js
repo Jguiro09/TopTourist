@@ -1,120 +1,27 @@
-// HTML Variables
-var checkbox = $("input[name=checkbox]"); // Grabs all of the checkboxes
-var submitBtn = $(".submitStyle"); // Detects when submit is clicked
-var aside2 = $('.aside2');
-var foodFilter = $('#foodFilter');
-var eventFilter = $('#eventFilter');
-var hotelFilter = $('#hotelFilter')
-var foodBtn = $('#foodBtn');
-var activitiesBtn = $('#activitiesBtn');
-var hotelBtn = $('#hotelBtn');
-var searchBtn = $('#search');
-var checkFilter;
-var userLocation = $('#userLocation')
-var city;
-var checkIn = $('#checkIn');
-var checkOut = $('#checkOut');
-var adults = $('#adults');
+// Side Menu
+const sideNav = document.querySelector('.sidenav');
+M.Sidenav.init(sideNav, {});
 
-var filters = []; // An array for the filters to be put in to
-
-window.localStorage.clear();
-aside2.slideUp(0);
-foodFilter.slideUp(0);
-eventFilter.slideUp(0);
-hotelFilter.slideUp(0);
-searchBtn.slideUp(0);
-
-checkbox.click('change', function () {
-    if (this.checked) {
-        $(this).parent().css('background', '#E88C31');
-        console.log($(this).val());
-
-        if ($.inArray($(this).val(), filters) == -1) {
-            filters.push($(this).val());
-            console.log(filters);
-            console.log($.inArray($(this).val(), filters));
-        }
-    }
-
-    else {
-        filters.splice(filters.indexOf($.inArray($(this).val(), filters)), 1);
-        console.log(filters);
-        $(this).parent().css('background', '#225B94');
-    }
+// Slider
+const slider = document.querySelector('.slider');
+M.Slider.init(slider, {
+    indicators: false,
+    height: 500,
+    transition: 500,
+    interval: 6000
 });
 
+// Scrollspy
+const ss = document.querySelectorAll('.scrollspy');
+M.ScrollSpy.init(ss, {});
 
-searchBtn.click(function () {
-    
-    if (checkFilter != 2)
-        {
-            var send =
-            {
-                check: checkFilter,
-                filter: filters.toString(),
-                name: city
-            }
-            console.log(send);
-            localStorage.setItem("check", JSON.stringify(send));
-        }
+// Material Boxed
+const mb = document.querySelectorAll('.materialboxed');
+M.Materialbox.init(mb, {});
 
-    else if (checkFilter == 2)
-    {
-        var send = 
-        {
-            check: checkFilter,
-            name: city,
-            checkIn: checkIn.val(),
-            checkOut:checkOut.val(),
-            adults: adults.val()
-        }
-        localStorage.setItem("check", JSON.stringify(send));
-        console.log(send);
-    }
-    
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+    $('.datepicker').datepicker();
 });
-
-
-submitBtn.click(function () {
-    aside2.slideDown();
-    city = userLocation.val();
-});
-
-foodBtn.click(function () {
-    eventFilter.slideUp("slow");
-    hotelFilter.slideUp("slow");
-    searchBtn.slideDown();
-    setTimeout(function () {
-        searchBtn.slideDown();
-        foodFilter.slideDown();
-    }, 600)
-    checkFilter = 0;
-    console.log(checkFilter);
-    filters = [];
-});
-
-activitiesBtn.click(function () {
-    foodFilter.slideUp("slow");
-    hotelFilter.slideUp("slow");
-    searchBtn.slideDown();
-    setTimeout(function () {
-        searchBtn.slideDown();
-        eventFilter.slideDown();
-    }, 600)
-    checkFilter = 1;
-    console.log(checkFilter);
-    filters = [];
-});
-
-hotelBtn.click(function () {
-    foodFilter.slideUp("slow");
-    eventFilter.slideUp("slow");
-    setTimeout(function () {
-        searchBtn.slideDown();
-        hotelFilter.slideDown();
-    }, 600)
-    checkFilter = 2;
-    console.log(checkFilter);
-    filters = [];
-});
+$('select').material_select();
