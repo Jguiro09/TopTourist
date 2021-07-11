@@ -1,4 +1,4 @@
-var userLocationInput; 
+var userLocationInput;
 var check
 var filterOptions
 var searchBtn = $('.submitInfo');
@@ -6,10 +6,10 @@ var searchBtn = $('.submitInfo');
 function getFoodAPI() {
     var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=' + check.filter;
     fetch(requestURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
 
 
             // var foodVenueName = $("foodVenueName");
@@ -21,8 +21,6 @@ function getFoodAPI() {
             // var foodVenueLocation = console.log(data.response.venues[0].location.formattedAddress)
             // var venueFoodType = console.log(data.response.venues[0].categories[0].shortName)
 
-            var title = "<tr><th>Name</th><th>Address</th><th>Type</th></tr>"
-            $("#uservenue").append(title);
 
             for (let index = 0; index < 5; index++) {
                 // food drilldown variables
@@ -31,7 +29,7 @@ function getFoodAPI() {
                 var venueFoodType = data.response.venues[index].categories[0].shortName;
 
                 var markup = "<tr><td> " + foodVenueName + " </td><td>" + foodVenueLocation + "</td><td>" + venueFoodType + "</td></tr>";
-                $("#uservenue").append(markup);
+                $("#foodVenue").append(markup);
 
             }
 
@@ -39,20 +37,16 @@ function getFoodAPI() {
 }
 
 
-searchBtn.click(function ()
-{
+searchBtn.click(function() {
     {
         check = JSON.parse(localStorage.getItem("check"));
         userLocationInput = check.name;
         filterOptions = check.filter;
-        if (check.check == 0) 
-        
-        { getFoodAPI(); } 
-        
-        
-        else if (check.check == 1) 
+        if (check.check == 0)
 
-        { getEventAPI();  } 
+        { getFoodAPI(); } else if (check.check == 1)
+
+        { getEventAPI(); }
     }
 })
 
@@ -61,13 +55,12 @@ searchBtn.click(function ()
 function getEventAPI() {
     var requestURL = 'https://api.foursquare.com/v2/venues/search?client_id=RTRUVKESRURB2RGWGGYSRQUJBXQDMZ2EPCM4IT33LQYPF505&client_secret=00ATNEY1RY15L0KKZ0P41ML22E4KUV5GCEW0LAPPJ5GZKG5R&v=20210706&near=' + userLocationInput + '&intent=browse&radius=10000&limit=20&categoryId=' + check.filter;
     fetch(requestURL)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
 
-            var title = "<tr><th>Name</th><th>Address</th><th>Type</th></tr>"
-            $("#uservenue").append(title);
+
 
             for (let index = 0; index < 5; index++) {
                 // food drilldown variables
@@ -76,11 +69,11 @@ function getEventAPI() {
                 var activityType = data.response.venues[index].categories[0].shortName;
 
                 var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
-                $("#uservenue").append(markup);
+                $("#eventVenue").append(markup);
 
 
             }
-        
+
 
 
             console.log(data.response.venues)
