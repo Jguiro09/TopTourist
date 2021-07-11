@@ -1,6 +1,10 @@
-.slider .btn {
-    margin-top: 20px;
-}
+.slider h2 {
+    color:#f2f2f2;
+    font-size: 50px;
+    text-shadow: -1px 1px 0 #000,
+                  1px 1px 0 #000,
+                 1px -1px 0 #000;
+ }
 
 .section-search input {
     padding: 5px;
