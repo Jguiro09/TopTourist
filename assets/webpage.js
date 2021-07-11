@@ -25,3 +25,10 @@ $(document).ready(function(){
     $('.datepicker').datepicker();
 });
 $('select').material_select();
+
+$(".modal").modal({
+    onCloseEnd: function()
+    {
+        $('input[type=checkbox]').prop('checked',false);
+    }
+})

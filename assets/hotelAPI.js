@@ -19,6 +19,9 @@ searchBtn.click(function() {
 })
 
 function getLocationID() {
+
+    $('.loadingScreen').css('display', 'block');
+
     fetch("https://hotels4.p.rapidapi.com/locations/search?query=" + city + "&locale=en_US", {
             "method": "GET",
             "headers": {
@@ -50,6 +53,7 @@ function getLocationID() {
                     console.log(data);
                     var userLocationInput = (data.data.body.searchResults.results[0].address);
 
+                    $('.loadingScreen').css('display', 'none');
 
                     for (let index = 0; index < 5; index++) {
                         var userLocality = (data.data.body.searchResults.results[index].address.locality);
