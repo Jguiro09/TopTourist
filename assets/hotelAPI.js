@@ -69,7 +69,7 @@ function getLocationID() {
                     // this will be where the searchout puts the infomation 
                     
 
-                    // console.log(userLocationInput, userRatePlan);
+                   
                 })
 
 
