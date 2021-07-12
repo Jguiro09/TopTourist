@@ -8,7 +8,7 @@ var destination;
 // when the button is clicked function:
 searchBtn.click(function() {
     check = JSON.parse(localStorage.getItem("check"));
-// when you click the city,checkin/out and adults  you should get a response of avalible hotels in the area.
+    // when you click the city,checkin/out and adults  you should get a response of avalible hotels in the area.
     if (check.check == 2) {
         city = check.name;
         checkIn = check.checkIn;
@@ -21,7 +21,7 @@ searchBtn.click(function() {
 function getLocationID() {
 
     $('.loadingScreen').css('display', 'block');
-// here we are gitting the infomation from the Hotel api's 
+    // here we are gitting the infomation from the Hotel api's 
     fetch("https://hotels4.p.rapidapi.com/locations/search?query=" + city + "&locale=en_US", {
             "method": "GET",
             "headers": {
@@ -62,12 +62,12 @@ function getLocationID() {
                         var userRegion = (data.data.body.searchResults.results[index].address.region);
                         var userRatePlan = (data.data.body.searchResults.results[index].ratePlan.price.current);
                         var userHotelName = (data.data.body.searchResults.results[index].name);
-                    
+
                         var markup = "<tr><td>" + userHotelName + "</td><td> " + userStreetAddress + ", " + userLocality + ", " + userRegion + ", " + userPostalCode + " </td><td>" + userRatePlan + "</td></tr>";
                         $('#hotelVenue').append(markup);
                     }
                     // this will be where the searchout puts the infomation 
-                    
+
 
                    
                 })
@@ -75,8 +75,3 @@ function getLocationID() {
 
         });
 }
-
-
-
-
-
