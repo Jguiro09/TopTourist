@@ -67,9 +67,6 @@ function getLocationID() {
                         $('#hotelVenue').append(markup);
                     }
                     // this will be where the searchout puts the infomation 
-
-
-                   
                 })
 
 

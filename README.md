@@ -31,7 +31,9 @@ Create a travel web application that allows users to access business information
 
 # Resources & Technology Used
 
-HTML  CSS  JavaScript
+HTML  
+CSS  
+JavaScript  
 Materialize CSS  
 Foursquare Place API- Postman  
 Hotels API- Rapid API  
@@ -39,17 +41,11 @@ Codepen
 Unsplash  
 
 # Contributors
-Jacob Guiro
-David Gauthier
-Jonathan Foster
-Celia Pennington
+Jacob Guiro  
+David Gauthier  
+Jonathan Foster  
+Celia Pennington  
 
-<<<<<<< HEAD
 # Future Development
 Add ratings and location shoutouts based on user ratings  
 Allow user reviews and image uploads based on location  
-=======
-#Future Development
-Add ratings and location shoutouts based on user ratings
-Allow user reviews and image uploads based on location
->>>>>>> 022bd9bef9ce416be5ba8188198f3716dbfd85db

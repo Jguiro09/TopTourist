@@ -14,11 +14,6 @@ function getFoodAPI() {
             return response.json();
         })
         .then(function(data) {
-
-
-            
-
-
             for (let index = 0; index < 5; index++) {
                 // food drilldown variables
                 var foodVenueName = data.response.venues[index].name;
@@ -29,7 +24,6 @@ function getFoodAPI() {
                 $("#foodVenue").append(markup);
 
             }
-
         })
 }
 
@@ -57,25 +51,16 @@ function getEventAPI() {
         })
         .then(function(data) {
 
-
-
             for (let index = 0; index < 5; index++) {
-                // food drilldown variables
+                // activity drilldown variables
                 var activityVenueName = data.response.venues[index].name;
                 var activityVenueLocation = data.response.venues[index].location.formattedAddress.toString();
                 var activityType = data.response.venues[index].categories[0].shortName;
 
                 var markup = "<tr><td> " + activityVenueName + " </td><td>" + activityVenueLocation + "</td><td>" + activityType + "</td></tr>";
                 $("#eventVenue").append(markup);
-
-
             }
-
-
-
             //console.log(data.response.venues)
-
         })
 
 }
-
