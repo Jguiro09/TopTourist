@@ -33,8 +33,8 @@ function getLocationID() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
-            console.log(data.suggestions[0].entities[0].destinationId);
+            // console.log(data);
+            // console.log(data.suggestions[0].entities[0].destinationId);
             destination = data.suggestions[0].entities[0].destinationId;
             
 
