@@ -1,4 +1,4 @@
-var searchBtn = $('#search');
+var searchBtn = $('.submitInfo');
 var check;
 var city;
 var checkIn;
@@ -19,6 +19,9 @@ searchBtn.click(function() {
 })
 
 function getLocationID() {
+
+    $('.loadingScreen').css('display', 'block');
+
     fetch("https://hotels4.p.rapidapi.com/locations/search?query=" + city + "&locale=en_US", {
             "method": "GET",
             "headers": {
@@ -50,6 +53,7 @@ function getLocationID() {
                     console.log(data);
                     var userLocationInput = (data.data.body.searchResults.results[0].address);
 
+                    $('.loadingScreen').css('display', 'none');
 
                     for (let index = 0; index < 5; index++) {
                         var userLocality = (data.data.body.searchResults.results[index].address.locality);
@@ -61,7 +65,7 @@ function getLocationID() {
                         // var userHotelAddress = (data.data.body.searchResults.results[0].address.locality)
 
                         var markup = "<tr><td>" + userHotelName + "</td><td> " + userStreetAddress + ", " + userLocality + ", " + userRegion + ", " + userPostalCode + " </td><td>" + userRatePlan + "</td></tr>";
-                        $('#uservenue').append(markup);
+                        $('#hotelVenue').append(markup);
                     }
                     // var userRating = (data.data.body.searchResults.options.choices);
 

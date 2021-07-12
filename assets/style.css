@@ -1,12 +1,15 @@
-.slider .btn {
-    margin-top: 20px;
+.slider h2 {
+    color: teal;
+    font-size: 50px;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .section-search input {
-    padding: 5px !important;
-    font-size: 18px !important;
-    width: 90% !important;
-    border: #f4f4f4 3px solid !important;
+    padding: 5px;
+    font-size: 18px;
+    width: 90%;
+    border: #f4f4f4 3px solid;
 }
 
 .section-follow .fa-4x {
@@ -23,4 +26,31 @@
 
 .modal-form-row {
     margin-bottom: 0px;
+}
+
+.brand-logo {
+    font-family: 'Courgette', cursive;
+}
+
+.search {
+    font-family: 'Caveat', cursive;
+    font-size: x-large;
+}
+
+.popular {
+    font-family: 'Caveat', cursive;
+    font-size: x-large;
+}
+
+.gallery {
+    font-family: 'Caveat', cursive;
+    font-size: x-large;
+}
+
+.flow-text {
+    font-family: 'Courgette', cursive;
+}
+
+.destination {
+    font-family: 'Bentham', serif;
 }
