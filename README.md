@@ -44,6 +44,12 @@ David Gauthier
 Jonathan Foster
 Celia Pennington
 
+<<<<<<< HEAD
 # Future Development
 Add ratings and location shoutouts based on user ratings  
 Allow user reviews and image uploads based on location  
+=======
+#Future Development
+Add ratings and location shoutouts based on user ratings
+Allow user reviews and image uploads based on location
+>>>>>>> 022bd9bef9ce416be5ba8188198f3716dbfd85db
