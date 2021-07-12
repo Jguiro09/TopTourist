@@ -1,12 +1,550 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <!-- Google fonts link-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link href="assets/style.css" rel="stylesheet">
+    <title>Top Tourist</title>
 </head>
+
 <body>
-    TEST
+    <div class="navbar-fixed">
+        <nav class="teal">
+            <div class="container">
+                <div class="nav-wrapper">
+
+                    <a href="#!" class="brand-logo">TopTourist<i class="material-icons">star</i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <a href="#search" class="search">Search</a>
+                        </li>
+                        <li>
+                            <a href="#popular" class="search">Popular Places</a>
+                        </li>
+                        <li>
+                            <a href="#gallery" class="search">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="#home">Home</a>
+        </li>
+        <li>
+            <a href="#search">Search</a>
+        </li>
+        <li>
+            <a href="#popular">Popular Places</a>
+        </li>
+        <li>
+            <a href="#gallery">Gallery</a>
+        </li>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+    </ul>
+
+    <!-- Section: Slider -->
+    <!-- Section: Slider -->
+    <section class="slider">
+        <ul class="slides">
+            <li>
+                <img src="assets/img/joshua-rondeau-ecScGr6Oicw-unsplash.jpg" alt="Seaside village of Faros with white houses">
+                <div class="caption center-align">
+                    <h2>Take Your Dream Vacation</h2>
+
+
+                </div>
+            </li>
+
+            <li>
+                <img src="assets/img/nathalia-segato-YkXdxWd8hRw-unsplash.jpg" alt="Neon BBQ sign on window with people eating in restaurant behind window">
+                <div class="caption right-align">
+                    <h2>Eat Your Favorite Foods</h2>
+
+
+
+
+                </div>
+            </li>
+            <li>
+                <img src="assets/img/tijs-van-leur-Qnlp3FCO2vc-unsplash.jpg" alt="audience at a concert with a yellow tint">
+                <div class="caption right-align">
+                    <h2>Live Your Best Life</h2>
+
+
+                </div>
+            </li>
+            <li>
+                <img src="assets/img/andrew-neel-B4rEJ09-Puo-unsplash.jpg" alt="Hotel bed white white sheets">
+                <div class="caption right-align">
+                    <h2>Sleep Your Best Sleep</h2>
+
+                </div>
+            </li>
+
+        </ul>
+    </section>
+    <!-- Section: Search -->
+    <section id="search" class="section section-search teal darken-1 white-text center scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h3 class="destination">Search Destinations</h3>
+                    <div class="input-field">
+                        <input class="white grey-text autocomplete" placeholder="Aruba, Cancun, etc..." type="text" id="userLocation">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Icon Boxes -->
+    <section class="section section-icons grey lighten-4 center">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card-panel">
+                        <i class="material-icons large teal-text">local_dining</i>
+                        <h4 class="modalHeadlines">Food</h4>
+                        <p class="search">Looking to find a great place to eat? Discover a restaurant near you to satifiy your cravings.</p>
+
+                        <!-- Modal Trigger -->
+                        <button class="btn modal-trigger" id="foodBtn" data-target="test">Click Me</button>
+                        <!-- Modal Structure -->
+                        <div id="test" class="modal">
+                            <div class="modal-content">
+                                <h4 class="modaltext">What are you craving?</h4>
+
+                                <div class="row">
+                                    <form class="col s12" onsubmit="return false">
+                                        <!-- American / Chinese -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="american" name="checkbox"
+															value="4bf58dd8d48988d14e941735" />
+														<span class="modaltext">American</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="chinese" name = "checkbox" value="4bf58dd8d48988d145941735"/>
+														<span class="modaltext">Chinese</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Barbecue / Italian -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id = "barbecue" name = "checkbox" value="4bf58dd8d48988d1df931735"/>
+														<span class="modaltext">Barbecue</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="italian" name = "checkbox" value="4bf58dd8d48988d110941735"/>
+														<span class="modaltext">Italian</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mexican/Pizza -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="mexican" name = "checkbox" value="4bf58dd8d48988d1c1941735"/>
+														<span class="modaltext">Mexican</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id = "pizza" name = "checkbox" value="4bf58dd8d48988d1ca941735"/>
+														<span class="modaltext">Pizza</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Seafood/Spanish -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id = "seafood" name = "checkbox" value="4bf58dd8d48988d1ce941735"/>
+														<span class="modaltext">Seafood</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="spanish" name="checkbox"
+															value="4bf58dd8d48988d150941735" />
+														<span class="modaltext">Spanish</span>
+													</label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="input-field col s12 left-align">
+                                                <br>
+                                                <button class="btn  submitInfo" type="submit" name="action">Submit<i
+															class="material-icons right">send</i></button>
+                                                <table id="foodVenue">
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>Address</td>
+                                                        <td>Type</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <a class=" modal-action modal-close waves-effect btn-flat">CLOSE</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card-panel">
+                        <i class="material-icons large teal-text">local_activity</i>
+                        <h4 class="modalHeadlines">Activites</h4>
+                        <p class="search">Are you looking for some fun in town? You can find your favorite entertainment here!</p>
+
+                        <!-- Modal Trigger -->
+                        <button class="btn modal-trigger" id="activitiesBtn" data-target="modal2">Click Me</button>
+                        <!-- Modal Structure -->
+                        <div id="modal2" class="modal">
+                            <div class="modal-content">
+                                <h4 class="modaltext">what sounds fun?</h4>
+
+                                <div class="row">
+                                    <form class="col s12" onsubmit="return false">
+                                        <!-- American / Chinese -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="movieTheater" name="checkbox"
+															value="4bf58dd8d48988d17f941735" />
+														<span class="modaltext">Movie Theater</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="museum" name = "checkbox" value="4bf58dd8d48988d181941735"/>
+														<span class="modaltext">Museum</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Barbecue / Italian -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="musicVenue" name = "checkbox" value="4bf58dd8d48988d1e5931735"/>
+														<span class="modaltext">Music Venue</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="performingArtsVenue" name = "checkbox" value="4bf58dd8d48988d1f2931735"/>
+														<span class="modaltext">Performing Arts</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <!-- Mexican -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="stadium" name = "checkbox" value="4bf58dd8d48988d184941735"/>
+														<span class="modaltext">Stadium</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s6">
+                                                <label>
+														<input type="checkbox" id="themePark" name="checkbox"
+															value="4bf58dd8d48988d182941735" />
+														<span class="modaltext">Theme Park</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12 left-align">
+                                                <br>
+                                                <button class="btn  submitInfo" type="submit" name="action">Submit<i
+															class="material-icons right">send</i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <table id="eventVenue">
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>Address</td>
+                                                        <td>Type</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <a class=" modal-action modal-close waves-effect btn-flat">CLOSE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card-panel">
+                        <i class="material-icons large teal-text">business</i>
+                        <h4 class="modalHeadlines">Hotels</h4>
+                        <p class="search">Looking for a place to stay? Find a great Hotel that meets all of your needs for your stay!</p>
+
+                        <button class="btn modal-trigger" id="hotelBtn" data-target="modal3">Click Me</button>
+                        <!-- Modal Structure -->
+                        <div id="modal3" class="modal">
+                            <div class="modal-content">
+                                <h4 class="modaltext">How long are you going to stay?</h4>
+
+                                <div class="row">
+                                    <form class="col s12" onsubmit="return false">
+                                        <!-- American / Chinese -->
+                                        <div class="row modal-form-row">
+                                            <div class="input-field col s4">
+                                                <label>
+														<input type="date" id = "checkIn">
+														<span class="modaltext">Enter Starting Date</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s4">
+                                                <label>
+														<input type="date" id = "checkOut">
+														<span class="modaltext">Enter Leaving Date</span>
+													</label>
+                                            </div>
+
+                                            <div class="input-field col s4">
+                                                <label>
+														<input type="number" id = "adults" name="adults" min="1" max="5">
+														<span class="modaltext">Number of People</span>
+													</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="input-field col s12 left-align">
+                                                <br><br><br>
+                                                <button class="btn  submitInfo" type="submit" name="action">Submit<i
+															class="material-icons right">send</i></button>
+                                                <table id="hotelVenue">
+                                                    <tr>
+                                                        <td>Name</td>
+                                                        <td>Address</td>
+                                                        <td>Type</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                            <div class="row loadingScreen" style="display: none;">
+                                                <div class="col s12">
+                                                    <div class="preloader-wrapper small active">
+                                                        <div class="spinner-layer spinner-green-only">
+                                                            <div class="circle-clipper left">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="gap-patch">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                            <div class="circle-clipper right">
+                                                                <div class="circle"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class=" modal-action modal-close waves-effect btn-flat">CLOSE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Section: Popular -->
+    <section id="popular" class="section section-popular scrollspy">
+        <div class="container">
+            <div class="row">
+                <h4 class="center">
+                    <span class="teal-text">Popular</span> Places
+                </h4>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/dan-freeman-7Zb7kUyQg1E-unsplash.jpg" alt="The Sydney Opera House with water in foreground">
+                            <span class="card-title">Sydney, Australia</span>
+                        </div>
+                        <div class="card-content">
+                            <p>The modern multi-venue Sydney Opera House is among the most recognisable centers of music, theatre and culture in Sydney and the world. 10.9 million people visit annually.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/ben-o-bro-wpU4veNGnHg-unsplash.jpg" alt="New York City skyline at sunset ">
+                            <span class="card-title">New York City</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Oysters were so popular in New York in the 19th century that the shells were used to pave Pearl Street. They were also used for lime for the masonry of the Trinity Church.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/img/andreas-brucker-g5Uh7nP60FA-unsplash.jpg" alt="Bangko, Thailand skyline">
+                            <span class="card-title">Bangkok, Thailand</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Bangkok is called the 'Venice of the East'. Just like Venice, Bangkok is a city built on dozens of canals. Most of these canals have now been paved in, the nickname has stuck.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section: Thank API -->
+    <section class="section section-follow teal darken-2 white-text center">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5>POWERED BY FOURSQUARE</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Gallery -->
+    <section id="gallery" class="section section-gallery scrollspy">
+        <div class="container">
+            <h4 class="center">
+                <span class="teal-text">Photo </span> Gallery
+            </h4>
+            <div class="row">
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/alicia-steels-5AxRCxe_fa0-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/jezael-melgoza-layMbSJ3YOE-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/joonyeop-baek-1kf69eE7VR4-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/keem-ibarra-I2Dz5Hljm9g-unsplash.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/mariusz-pierog-EqPRDrddtaQ-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/elevate-snnhGYNqm44-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/anthony-delanoix-aDxmYZtYj7g-unsplash (1).jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/francesca-saraco-_dS27XGgRyQ-unsplash.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/priscilla-du-preez-W3SEyZODn8U-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/vienna-reyes-qCrKTET_09o-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/johen-redman-anpIZuY1DBY-unsplash.jpg" alt="">
+                </div>
+                <div class="col s12 m3">
+                    <img class="materialboxed responsive-img" src="assets/img/vitolda-klein-vknNquR-VcQ-unsplash.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="section teal darken-2 white-text center">
+        <p class="flow-text">TopTourist &copy; 2021</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="./assets/webpage.js"></script>
+    <script src="assets/filters.js"></script>
+    <script src="assets/hotelAPI.js"></script>
+    <script src="assets/script.js"></script>
 </body>
+
 </html>
