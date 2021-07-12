@@ -22,7 +22,6 @@ M.Materialbox.init(mb, {});
 $(document).ready(function(){
     $('.modal-trigger').leanModal();
     $('.datepicker').datepicker();
-    $(".myVenue").slideUp(0);
 });
 
 $('select').material_select();
@@ -38,3 +37,5 @@ $(".mySearchButton").click(function ()
 {
     $(".myVenue").slideDown();
 })
+
+$(".myVenue").slideUp(0);
