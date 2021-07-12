@@ -1,41 +1,35 @@
-// HTML Variables
 var checkbox = $("input[name=checkbox]"); // Grabs all of the checkboxes
 var submitBtn = $(".submitInfo"); // Detects when submit is clicked
-var foodBtn = $('#foodBtn');
-var activitiesBtn = $('#activitiesBtn');
-var hotelBtn = $('#hotelBtn');
-var checkFilter;
-var userLocation = $('#userLocation')
-var city;
-var checkIn = $('#checkIn');
-var checkOut = $('#checkOut');
-var adults = $('#adults');
+var foodBtn = $('#foodBtn'); // Detects when the food modal is clicked
+var activitiesBtn = $('#activitiesBtn'); // Detects when the activities modal is clicked
+var hotelBtn = $('#hotelBtn'); // Detects when the hotel modal is clicked
+var checkFilter; // A filter that lets the API knows which one will be used (0 = food, 1 = activities, 2 = hotel)
+var userLocation = $('#userLocation'); // Grabs the user location inside HTML
+var city; // Assigns the user location city to a variable
+var checkIn = $('#checkIn'); // Check in date for the hotel filter
+var checkOut = $('#checkOut'); // Check out date for the hotel filter
+var adults = $('#adults'); // Number of adults for the hotel filter
 
 var filters = []; // An array for the filters to be put in to
 
 
 
-window.localStorage.clear();
+window.localStorage.clear(); // Clears local storage so the filters are reset.
 
 checkbox.click('change', function () {
-    if (this.checked) {
-        console.log($(this).val());
-
+    if (this.checked) { // IF the selected filter is not inside the array, then it is pushed into the filters array.
         if ($.inArray($(this).val(), filters) == -1) {
             filters.push($(this).val());
-            console.log(filters);
-            console.log($.inArray($(this).val(), filters));
         }
     }
 
     else {
-        filters.splice(filters.indexOf($.inArray($(this).val(), filters)), 1);
-        console.log(filters);
+        filters.splice(filters.indexOf($.inArray($(this).val(), filters)), 1); // IF the selected filter is inside the array, then it is removed from the filters array.
     }
 });
 
 
-submitBtn.click(function () {
+submitBtn.click(function () { // Puts the user info into the location
     city = userLocation.val();
     if (checkFilter != 2)
         {
@@ -45,11 +39,10 @@ submitBtn.click(function () {
                 filter: filters.toString(),
                 name: city
             }
-            console.log(send);
             localStorage.setItem("check", JSON.stringify(send));
         }
 
-    else if (checkFilter == 2)
+    else if (checkFilter == 2) 
     {
         var send = 
         {
@@ -60,28 +53,21 @@ submitBtn.click(function () {
             adults: adults.val()
         }
         localStorage.setItem("check", JSON.stringify(send));
-        console.log(send);
     }
     
 });
 
 foodBtn.click(function () {
     checkFilter = 0;
-    console.log("food!")
-    console.log(checkFilter);
     filters = [];
 });
 
 activitiesBtn.click(function () {
     checkFilter = 1;
-    console.log("events!");
-    console.log(checkFilter);
     filters = [];
 });
 
 hotelBtn.click(function () {
     checkFilter = 2;
-    console.log("hotel!");
-    console.log(checkFilter);
     filters = [];
 });
