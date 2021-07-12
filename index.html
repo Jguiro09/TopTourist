@@ -118,16 +118,21 @@
             <div class="row">
                 <div class="col s12">
                     <h3 class="destination">Search Destinations</h3>
-                    <div class="input-field">
-                        <input class="white grey-text autocomplete" placeholder="Aruba, Cancun, etc..." type="text" id="userLocation">
-                    </div>
+                    <form onsubmit="return false">
+                        <div class="input-field">
+                            <input class="white grey-text autocomplete" placeholder="Aruba, Cancun, etc..." type="text" id="userLocation">
+                        </div>
+
+                        <button class="btn submitInfo mySearchButton" type="submit" name="action">Submit<i
+                            class="material-icons right">send</i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section: Icon Boxes -->
-    <section class="section section-icons grey lighten-4 center">
+    <section class="section section-icons grey lighten-4 center myVenue">
         <div class="container">
             <div class="row">
                 <div class="col s12 m4">
@@ -257,7 +262,7 @@
 
                                 <div class="row">
                                     <form class="col s12" onsubmit="return false">
-                                        <!-- American / Chinese -->
+                                        <!-- Movie Theater / Museum -->
                                         <div class="row modal-form-row">
                                             <div class="input-field col s6">
                                                 <label>
@@ -275,7 +280,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- Barbecue / Italian -->
+                                        <!-- Music Venue / Performing Arts -->
                                         <div class="row modal-form-row">
                                             <div class="input-field col s6">
                                                 <label>
@@ -292,7 +297,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- Mexican -->
+                                        <!-- Stadium / Theme Park -->
                                         <div class="row modal-form-row">
                                             <div class="input-field col s6">
                                                 <label>
@@ -537,6 +542,7 @@
         <p class="flow-text">TopTourist &copy; 2021</p>
     </footer>
 
+    <!-- JQUERY/MATERIALIZE/LOCAL JS FILES -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
