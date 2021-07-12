@@ -1,7 +1,7 @@
 .slider h2 {
     color: teal;
     font-size: 50px;
-    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000;
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
     font-family: 'Permanent Marker', cursive;
 }
 
@@ -53,4 +53,20 @@
 
 .destination {
     font-family: 'Bentham', serif;
+}
+
+.modalHeadlines {
+    font-family: 'DM Serif Display', serif;
+}
+
+.modaltext {
+    font-family: 'Special Elite', cursive;
+}
+
+.card-content {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.card-title {
+    font-family: 'Special Elite', cursive;
 }
