@@ -20,10 +20,11 @@ const mb = document.querySelectorAll('.materialboxed');
 M.Materialbox.init(mb, {});
 
 $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
     $('.datepicker').datepicker();
+    $(".myVenue").slideUp(0);
 });
+
 $('select').material_select();
 
 $(".modal").modal({
@@ -31,4 +32,9 @@ $(".modal").modal({
     {
         $('input[type=checkbox]').prop('checked',false);
     }
+})
+
+$(".mySearchButton").click(function ()
+{
+    $(".myVenue").slideDown();
 })
