@@ -24,9 +24,9 @@ Create a travel web application that allows users to access business information
 ## **6. Once selections are made a list will come up in modal based on selected filters.**
 ![Filters Image](./assets/README/Filters-info-list5.png)
 ## **7. User can browse popular places section and read information based on location.**  
-        **Future development: add links to popular places based on user ratings.**
+**Future development: add links to popular places based on user ratings.**  
 ![Popular Places](./assets/README/Popular-Places6.png)
-## 8. Users are able to browse vacation photos.
+## 8. **Users are able to browse vacation photos.**  
 ![Photo Gallery Images](./assets/README/PhotoGallery7.png)
 
 # Resources & Technology Used
